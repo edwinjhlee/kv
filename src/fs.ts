@@ -6,16 +6,16 @@ import * as u from "./utils"
 
 export class FS extends Persistatnce{
 
-    constructor(public prefix: string){
+    constructor(public filepath_prefix: string){
         super()
     }
 
     calDataStoreFileName(timestamp: number){
-        return `${this.prefix}.${timestamp}`
+        return `${this.filepath_prefix}.${timestamp}`
     }
 
     calTimestampName(){
-        return `${this.prefix}.latest_timestamp`
+        return `${this.filepath_prefix}.latest_timestamp`
     }
 
     save(msg: string, timestamp: number): Promise<void> {
@@ -48,5 +48,5 @@ export class FS extends Persistatnce{
 
 }
 
-
+export default FS
 

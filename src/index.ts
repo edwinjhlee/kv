@@ -22,3 +22,6 @@ export abstract class Persistatnce{
 }
 
 export default Persistatnce
+
+import fs from "./fs"
+export { fs }
